@@ -1,0 +1,42 @@
+{% extends 'chatroom/layout.html' %} {% load static %} {% block title%}Add
+Contact{% endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'chatroom/form.css' %}"
+/>
+<script src="{% static 'chatroom/username.js' %}"></script>
+{% endblock %} {% block body %}
+<div class="center">
+  <h4 class="mb-4">Change Username</h4>
+  <form style="text-align: center" method="post" action="">
+    {% csrf_token %}
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="New Username"
+        id="newusername"
+        name="newusername"
+      />
+    </div>
+    <div class="input-group mt-3">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Current Password"
+        id="password"
+        name="password"
+      />
+    </div>
+    <div id="error" class="error"></div>
+    <input
+      type="submit"
+      class="btn btn-primary mt-3"
+      value="Change"
+      id="submit"
+    />
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'chatroom/layout.html' %} {% load static %} {% block title%}Add
+Contact{% endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'chatroom/form.css' %}"
+/>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelector("#submit")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        const contactName = document.getElementById("username").value;
+        const phoneNumber = document.getElementById("phonenumber").value;
+        if (
+          contactName == "" ||
+          phoneNumber == "" ||
+          phoneNumber == null ||
+          contactName == null
+        ) {
+          document.getElementById("error").innerHTML =
+            "Please enter all fields";
+        }
+      });
+  });
+</script>
+{% endblock %} {% block body %}
+<div class="center">
+  <h4 class="mb-4">Add Contact</h4>
+  <form style="text-align: center" method="post" action="">
+    {% csrf_token %}
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        id="username"
+      />
+    </div>
+    <div class="input-group mt-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Phonenumber"
+        id="phonenumber"
+      />
+    </div>
+    <div id="error" class="error"></div>
+    <input
+      type="submit"
+      class="btn btn-primary mt-3"
+      value="Add Contact"
+      id="submit"
+    />
+  </form>
+</div>
+
+{% endblock %}

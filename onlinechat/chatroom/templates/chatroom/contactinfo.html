@@ -1,0 +1,33 @@
+{% extends 'chatroom/layout.html' %} {% load static %} {% block title%}Add
+Contact{% endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'chatroom/form.css' %}"
+/>
+{% endblock %} {% block body %}
+<div class="center">
+  <h4 class="mb-4">Contact Info</h4>
+  <div style="text-align: center" method="post" action="">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        name="username"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Phonenumber"
+        name="phonenumber"
+      />
+    </div>
+    <!-- <button type="button" class="btn-close right" aria-label="Close"></button> -->
+    <!-- here: if contactInfo -->
+  </div>
+  {% endblock %}
+</div>

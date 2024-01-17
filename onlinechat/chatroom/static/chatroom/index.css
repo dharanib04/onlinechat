@@ -1,0 +1,63 @@
+@media screen and (max-width: 768px) {
+  .contacts,
+  .chat {
+    height: 100vh;
+  }
+}
+
+.contacts {
+  background-color: rgb(231, 231, 231);
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.chat {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.textbox {
+  position: fixed;
+  margin-top: 375px;
+}
+
+.margins {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.contacts-nav {
+  background-color: rgb(171, 171, 171);
+}
+
+.chat-nav {
+  background-color: rgb(221, 221, 221);
+}
+
+.contacts-item {
+  background-color: rgb(215, 215, 215);
+  height: 8vh;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  padding-left: 3%;
+  padding-top: 2%;
+  border-style: solid none none;
+  border-width: 1px;
+  border-color: rgb(171, 171, 171);
+}
+
+.chat-item-left {
+  background-color: rgb(95, 129, 159);
+  padding-left: 3%;
+  padding-bottom: 1%;
+}
+
+.chat-item-right {
+  background-color: rgb(171, 171, 171);
+  padding-right: 3%;
+  padding-bottom: 1%;
+  text-align: right;
+}
